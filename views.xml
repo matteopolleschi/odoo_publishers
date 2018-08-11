@@ -21,5 +21,17 @@
                 </field>
             </field>
         </record>
+        
+        <record id="res_partner_view_kanban_inherited" model="ir.ui.view">
+            <field name="name">res.partner kanban inherited</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_kanban"/>
+            <field name="arch" type="xml">
+                <field name="name" position="before">
+                    <field name="tuco_id"/>
+                </field>
+            </field>
+        </record>        
+        
     </data>
 </openerp>
