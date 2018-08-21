@@ -11,7 +11,7 @@
     'category': 'Accounting & Finance',
     'version': '0.1',
 
-    'depends': ['web','base','account_accountant'],
+    'depends': ['web','base','account_invoicing'],
 
     'data': [
         'views.xml',
