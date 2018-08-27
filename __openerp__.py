@@ -15,5 +15,6 @@
 
     'data': [
         'views.xml',
+        'data/account_data.xml',
     ],
 }
