@@ -51,13 +51,16 @@
                     </attribute>
                 </label>
                 <label string="Invoice" position="after">
-                    <label string="Nota"
+                    <label string="Note"
                            attrs="{'invisible': ['|',('code', '!=', 'Nota'),'|',('state','in',('draft','proforma','proforma2')), ('type','&lt;&gt;','out_invoice')]}"/>
                 </label>
                 <label string="Draft Invoice" position="after">
-                    <label string="Draft Nota"
+                    <label string="Draft Note"
                            attrs="{'invisible': ['|',('code', '!=', 'Nota'),'|',('state','not in',('draft',)),('type','&lt;&gt;','out_invoice')]}"/>
                 </label>
+                <field name="type" position="after">
+                    <field name="code" invisible="1"/>
+                </field>
             </field>
         </record>
 
@@ -68,7 +71,7 @@
 
         <!--new menu for "Customer Invoices Note"-->
         <record id="action_invoice_tree10" model="ir.actions.act_window">
-            <field name="name">Customer Invoices Note</field>
+            <field name="name">Note</field>
             <field name="res_model">account.invoice</field>
             <field name="view_type">form</field>
             <field name="view_mode">tree,form,calendar,graph</field>
@@ -109,7 +112,7 @@
             <field name="act_window_id" ref="action_invoice_tree10"/>
         </record>
 
-        <menuitem action="action_invoice_tree10" id="menu_action_invoice_sale_note"
+        <menuitem name="Note" action="action_invoice_tree10" id="menu_action_invoice_sale_note"
                   parent="account.menu_finance_receivables" sequence="500"/>
 
     </data>
