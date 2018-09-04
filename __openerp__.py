@@ -16,5 +16,6 @@
     'data': [
         'views.xml',
         'data/account_data.xml',
+        'report/inherit_account_report.xml',
     ],
 }

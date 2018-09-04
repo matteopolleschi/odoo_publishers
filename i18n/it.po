@@ -17,11 +17,13 @@ msgstr ""
 
 #. module: account
 #: view:account.invoice:account.invoice_form
+#: view:website:account.report_invoice_document
 msgid "Draft Note"
 msgstr "Bozza di Nota"
 
 #. module: account
 #: view:account.invoice:account.invoice_form
+#: view:website:account.report_invoice_document
 msgid "Note"
 msgstr "Nota"
 
