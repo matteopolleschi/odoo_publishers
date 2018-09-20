@@ -14,6 +14,9 @@
             <xpath expr="//h2/span[3]" position="after">
                 <span t-if="o.code == 'Nota' and o.type == 'out_invoice' and o.state == 'draft'">Draft Note</span>
             </xpath>
+            <xpath expr="//div[@class='page']" position="inside">
+                <center><span t-if="o.code == 'Nota' and o.type == 'out_invoice'">IVA assolta dall'editore a norma dell'art. 74, lett. c) DPR 633/1972.</span></center>
+            </xpath>
         </template>
 
     </data>
