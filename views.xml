@@ -50,7 +50,8 @@
                             <field name="number" readonly="1" class="oe_inline" attrs="{'invisible': [('state','in',('draft',))]}"/>
                         </div>
                         <div  attrs="{'invisible': [('sequence_number_next_prefix','=',False)]}">
-                            <label string="Invoice Number:"/><br/>
+                            <label string="Invoice Number:" attrs="{'invisible': [('code', '=', 'Nota')]}"/><br/>
+                            <label string="Note Number:" attrs="{'invisible': [('code', '!=', 'Nota')]}"/><br/>
                             <field name="sequence_number_next_prefix" class="oe_inline"/>
                             <field name="sequence_number_next" class="oe_inline"/>
                         </div>
@@ -111,7 +112,7 @@
         </record>
 
         <menuitem name="Note" action="action_invoice_tree10" id="menu_action_invoice_sale_note"
-                  parent="account.menu_finance_receivables" sequence="500"/>
+                  parent="account.menu_finance_receivables_documents" sequence="500"/>
 
     </data>
 </odoo>
