@@ -2,21 +2,27 @@
 {
     'name': "Odoo for Publishing",
 
-    'summary': "Module for publishing businesses",
+    'summary': """Module for publishing businesses""",
 
-    'description': "Additional fields and VAT mapping",
+    'description': """Additional fields and VAT mapping""",
 
     'author': "Daphne Solutions",
-    'website': "http://www.github.com/matteopolleschi/odoo_imppn",
+    'website': "https://github.com/matteopolleschi/odoo_publishers",
+
     'category': 'Accounting & Finance',
     'version': '0.1',
 
-    # 'depends': ['web', 'base', 'account', 'account_accountant'],
-    'depends': ['web', 'base', 'account_invoicing'],
+    # any module necessary for this one to work correctly
+    'depends': ['web', 'base', 'account', 'account_accountant'],
 
+    # always loaded
     'data': [
         'views.xml',
         'data/account_data.xml',
         'report/inherit_account_report.xml',
+    ],
+    # only loaded in demonstration mode
+    'demo': [
+        'demo.xml',
     ],
 }
