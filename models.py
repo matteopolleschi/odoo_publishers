@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
 from lxml import etree
-from openerp import models, fields, api, _
-from openerp.exceptions import except_orm, Warning, RedirectWarning
+from odoo import models, fields, api, _
+from odoo.exceptions import except_orm, Warning, RedirectWarning
 
 # mapping invoice type to journal type
 TYPE2JOURNAL = {
@@ -35,7 +35,7 @@ class AccountInvoice(models.Model):
         inv_types = inv_type if isinstance(inv_type, list) else [inv_type]
         company_id = self._context.get('company_id', self.env.user.company_id.id)
         domain = [
-            ('type', 'in', filter(None, map(TYPE2JOURNAL.get, inv_types))),
+            ('type', 'in', list(filter(None, map(TYPE2JOURNAL.get, inv_types)))),
             ('company_id', '=', company_id),
         ]
         journal_code = self._context.get('journal_code')
@@ -53,7 +53,6 @@ class AccountInvoice(models.Model):
     def onchange_company_id(self, company_id, part_id, type, invoice_line, currency_id):
         res = super(AccountInvoice, self).onchange_company_id(company_id, part_id, type, invoice_line, currency_id)
         values = {}
-
         if company_id and type:
             journal_type = TYPE2JOURNAL[type]
             journal_code = self._context.get('journal_code')

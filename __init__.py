@@ -1,3 +1,3 @@
 # -*- coding: utf-8 -*-
-import models
-import account_journal
+from . import models
+from . import account_journal

@@ -1,6 +1,6 @@
 import logging
 
-from openerp import models
+from odoo import models
 
 _logger = logging.getLogger(__name__)
 

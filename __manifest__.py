@@ -7,12 +7,10 @@
     'description': "Additional fields and VAT mapping",
 
     'author': "Daphne Solutions",
-    'website': "http://www.github.com/matteopolleschi/odoo_imppn",
+    'website': "https://github.com/matteopolleschi/odoo_publishers",
     'category': 'Accounting & Finance',
-    'version': '0.1',
-
-    'depends': ['web', 'base', 'account', 'account_accountant'],
-
+    'version': '1.0',
+    'depends': ['web', 'base', 'account'],
     'data': [
         'views.xml',
         'data/account_data.xml',
