@@ -1,5 +1,16 @@
 <odoo>
     <data>
+        <record id="email_message_form_inherited" model="ir.ui.view">
+            <field name="name">mail.compose.message form inherited</field>
+            <field name="model">mail.compose.message</field>
+            <field name="inherit_id" ref="mail.email_compose_message_wizard_form"/>
+            <field name="arch" type="xml">
+                <field name="partner_ids" position="attributes">
+                    <attribute name="required">True</attribute>
+                </field>
+            </field>
+        </record>
+
         <record id="res_company_view_form_inherited" model="ir.ui.view">
             <field name="name">res.company form inherited</field>
             <field name="model">res.company</field>
